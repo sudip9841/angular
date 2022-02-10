@@ -1,0 +1,29 @@
+<!-- <p>second-child works!</p> -->
+
+
+<div>
+    <label for="name">Name</label><br>
+    <input type="text" name="name" [(ngModel)]="uname"><br><br>
+    
+    <label for="age">Age</label><br>
+    <input type="number" name="age" [(ngModel)]="uage"><br><br>
+    
+    <button *ngIf="addable" (click)="passValue()">Add</button>
+    <button *ngIf="updateable" (click)='editValue()'>Update</button><br><br>
+</div>
+
+<table>
+
+    <tr>
+        <th *ngFor="let t of titles">{{t.title}}</th>
+        <th>actions</th>
+    </tr>
+
+    <tr *ngFor=" let d of data">
+        <td>{{d.name}}</td>
+        <td>{{d.age}}</td>
+
+        <td><button (click)="editData(d.name,d.age)">Edit</button> <button (click)="viewData(d.name,d.age)">view</button></td>
+    </tr>
+
+</table>
